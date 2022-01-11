@@ -1,25 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class LogIn extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {nickname: '', password:''};
+
+    this.handleChangeNickname = this.handleChangeNickname.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
+  }
+
+  handleChangeNickname(event) {
+    this.setState({nickname: event.target.value});
+  }
+
+  handleChangePassword(event) {
+    this.setState({password: event.target.value});
+  }
+
+  render() {
+    return (
+      <div className="Login">
+        <h1>Welcome!</h1>
+        <h1>Are You Ready for Today?</h1>
+        <form>
+          <label>
+            Nickname:
+            <input type="text" value={this.state.nickname} onChange={this.handleChangeNickname}></input>
+          </label>
+          <label>
+            Password:
+            <input type="password" value={this.state.password} onChange={this.handleChangePassword}></input>
+          </label>
+          <Link to="/today">
+            <button>Log In</button>
+          </Link>
+          <Link to="/create-new-account">
+            <button>New?</button>
+          </Link>
+        </form>
+        {/* Put the logo of the app here! */}
+      </div>
+    );
+  }
 }
 
-export default App;
+export default LogIn;
