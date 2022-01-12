@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {nickname: '', password:''};
+    this.state = {username: '', password:''};
 
-    this.handleChangeNickname = this.handleChangeNickname.bind(this);
+    this.handleChangeUsername = this.handleChangeUsername.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
   }
 
-  handleChangeNickname(event) {
-    this.setState({nickname: event.target.value});
+  handleChangeUsername(event) {
+    this.setState({username: event.target.value});
   }
 
   handleChangePassword(event) {
@@ -26,8 +26,8 @@ class LogIn extends React.Component {
         <h1>Are You Ready for Today?</h1>
         <form>
           <label>
-            Nickname:
-            <input type="text" value={this.state.nickname} onChange={this.handleChangeNickname}></input>
+            Username:
+            <input type="text" value={this.state.username} onChange={this.handleChangeUsername}></input>
           </label>
           <label>
             Password:

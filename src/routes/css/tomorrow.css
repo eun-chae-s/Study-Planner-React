@@ -1,0 +1,26 @@
+.sidebar {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20%;
+  background-color: #245f68;
+}
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 20px;
+  font-size: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-decoration: none;
+}
+.tomorrow-planner {
+  margin-left: 290px;
+}
+.tomorrow-planner h1 {
+  font-size: 40px;
+}

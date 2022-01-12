@@ -1,0 +1,58 @@
+.sidebar {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20%;
+  background-color: #245f68;
+}
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 20px;
+  font-size: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-decoration: none;
+}
+.today-planner {
+  margin-left: 290px;
+}
+.today-planner h1 {
+  font-size: 40px;
+}
+.today-planner h3 {
+  margin-top: 40px;
+  font-size: 25px;
+  color: white;
+}
+table {
+  background-color: white;
+  padding: 10px;
+  width: 95%;
+}
+th,
+td {
+  border: 1px solid #245f68;
+  padding: 0.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+th {
+  color: #245f68;
+}
+th:first-child {
+  width: 80%;
+}
+th:nth-child(2) {
+  width: 10%;
+}
+th:last-child {
+  width: 10%;
+}
+td {
+  color: black;
+}

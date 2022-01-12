@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import LogIn from './App';
 import Today from './routes/today';
+import Tomorrow from './routes/tomorrow';
 import CreateAccout from './routes/create';
 import reportWebVitals from './reportWebVitals';
 
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Route path="/" element={<LogIn ></LogIn>}></Route>
       <Route path="today" element={<Today ></Today>}></Route>
       <Route path="create-new-account" element={<CreateAccout />}></Route>
+      <Route path="tomorrow" element={<Tomorrow></Tomorrow>}></Route>
     </Routes>
     
   </BrowserRouter>,

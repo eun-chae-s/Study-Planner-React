@@ -1,0 +1,29 @@
+/* body {
+  background-color: #9cadce;
+} */
+#new {
+  text-align: center;
+}
+#new-welcome h1,
+#new-welcome h2 {
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+#new-welcome h1 {
+  margin: 80px;
+  margin-top: 30%;
+}
+
+form {
+  margin: 40px;
+}
+
+label {
+  font-size: 25px;
+}
+
+button {
+  font-size: 20px;
+  color: #7390ca;
+}
