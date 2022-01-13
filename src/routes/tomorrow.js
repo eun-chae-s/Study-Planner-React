@@ -34,6 +34,7 @@ class Tomorrow extends React.Component {
                     <div className="timetable">
 
                     </div>
+                    {/* Do you have any mindsets that you want to have? */}
                 </div>
             </div>
         )

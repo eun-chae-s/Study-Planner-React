@@ -1,8 +1,15 @@
 import React from 'react';
 import './css/today.css';
+import Task from './task';
 import { Link } from 'react-router-dom';
 
 class Today extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            todayTodo: []
+        }
+    }
     render() {
         return (
             <div>
@@ -28,35 +35,25 @@ class Today extends React.Component {
                     <h1>
                         What's your plan for today?
                     </h1>
+                    {/* new design for displaying date */}
                     <h3>
                         {new Date().toISOString().slice(0, 10)}
                     </h3>
-                    <div className="todo-list">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Task</th>
-                                    <th>Goal hour?</th>
-                                    <th>Completed?</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-                        {/* new task add */}
-                        <button>
+                    <div className="add">
+                        <input id="new-task" placeholder='Type new task'></input>
+                        <button id="add-new-task">
                             Add
                         </button>
                     </div>
+
+                    <div className="todo-list">
+                        <ul>
+                            <li><Task task='hello' completion='finished'></Task></li>
+                        </ul>
+                    </div>
                     <div className="timetable">
                         <h3>
-                            How did you spend your day?
+                            Rate your day!
                         </h3>
                     </div>
                 </div>
