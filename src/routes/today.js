@@ -11,16 +11,19 @@ class Today extends React.Component {
         this.state = {
             newTask: '',
             todayTodo: [
-                {'task': 'MAT235 Lecture', 'completed': 'not yet'},
-                {'task': 'Make a React app', 'completed': 'yes'},
-                {'task': 'Workout', 'completed': 'no'},
-                {'task': 'Apply to internship', 'completed': 'next'},
-                {'task': 'Send an email', 'completed': 'not yet'}
-            ]
+                {'task': 'MAT235 Lecture', 'completed': false, 'id': 0},
+                {'task': 'Make a React app', 'completed': true, 'id': 1},
+                {'task': 'Workout', 'completed': true, 'id': 2},
+                {'task': 'Apply to internship', 'completed': true, 'id': 3},
+                {'task': 'Send an email', 'completed': false, 'id': 4}
+            ],
+            todayRating: [false, false, false]
         }
 
         this.addNewTask = this.addNewTask.bind(this);
         this.handleChangeNewTask = this.handleChangeNewTask.bind(this);
+        this.changeStatus = this.changeStatus.bind(this);
+        this.changeColor = this.changeColor.bind(this);
     }
 
     handleChangeNewTask(event) {
@@ -29,20 +32,38 @@ class Today extends React.Component {
 
     addNewTask() {
         var rows = this.state.todayTodo;
-        rows.push({'task': this.state.newTask, 'completed': 'not yet'});
+        rows.push({'task': this.state.newTask, 'completed': false, 'id': rows.length});
         this.setState({todayTodo: rows, newTask: ''});
     }
 
-    findRightEmoji(completed) {
-        if (completed === 'not yet') {
-            return <td></td>;
-        } else if (completed === 'no') {
-            return <td>&#10008;</td>;
-        } else if (completed === 'yes') {
-            return <td>&#10004;</td>;
+    findRightEmoji(completed, index) {
+        if (completed === false) {
+            return <td id={index} onClick={this.changeStatus}></td>;
         } else {
-            return <td>&#10137;</td>;
+            return <td id={index} onClick={this.changeStatus}>&#10004;</td>;
         }
+    }
+
+    changeStatus(e) {
+        var index = e.target.id;
+        var rows = this.state.todayTodo;
+        rows[index].completed = !rows[index].completed;
+        this.setState({todayTodo: rows});
+    }
+
+    changeColor(e) {
+        var index = e.target.id;
+        console.log(index);
+        var ratings = this.state.todayRating;
+        if (ratings[index] === false) {
+            console.log(e.target.children);
+        } else {
+            console.log(e.target.children);
+        }
+
+        ratings[index] = !ratings[index];
+        console.log(ratings);
+        this.setState({todayRating: ratings});
     }
 
     render() {
@@ -93,7 +114,7 @@ class Today extends React.Component {
                                 {this.state.todayTodo.map((item) => 
                                     <tr>
                                         <td>{item.task}</td>
-                                        {this.findRightEmoji(item.completed)}
+                                        {this.findRightEmoji(item.completed, item.id)}
                                     </tr>
                                 )}
                             </tbody>
@@ -104,11 +125,11 @@ class Today extends React.Component {
                             How was your day?
                         </h3>
                         {/* Need to make the icon clickable */}
-                        <FontAwesomeIcon icon={faSmile} size='4x' color='white'></FontAwesomeIcon>
-                        <FontAwesomeIcon icon={faSadCry} size='4x' color='white'></FontAwesomeIcon>
-                        <FontAwesomeIcon icon={faMeh} size='4x' color='yellow'></FontAwesomeIcon>
+                        <a id='0' onClick={this.changeColor}><FontAwesomeIcon icon={faSmile} size='4x' color='white'></FontAwesomeIcon></a>
+                        <a id='1' onClick={this.changeColor}><FontAwesomeIcon icon={faSadCry} size='4x' color='white'></FontAwesomeIcon></a>
+                        <a id='2' onClick={this.changeColor}><FontAwesomeIcon icon={faMeh} size='4x' color='white'></FontAwesomeIcon></a>
                     </div>
-                    
+
                     <button id='save'>Save</button>
                     {/* Spotify API */}
                     {/* <div>

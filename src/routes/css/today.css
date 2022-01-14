@@ -82,12 +82,18 @@ td {
 }
 td:last-child {
   color: #c71717;
+  cursor: pointer;
 }
 .rating h3 {
   margin-top: 40px;
   font-size: 25px;
   color: white;
   background: none;
+}
+.rating a {
+  cursor: pointer;
+  margin: 15px;
+  height: 50px;
 }
 #save {
   width: 100px;
