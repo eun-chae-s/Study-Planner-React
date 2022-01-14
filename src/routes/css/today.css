@@ -6,7 +6,7 @@
   left: 0;
   z-index: 1;
   overflow-x: hidden;
-  padding-top: 20%;
+  padding-top: 200px;
   background-color: #245f68;
 }
 .sidebar a {
@@ -32,17 +32,14 @@
   font-size: 25px;
   color: white;
 }
-.todo-list {
-  width: 70%;
-}
-
 .add {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 #new-task {
-  font-size: 20px;
+  font-size: 18px;
   width: 70%;
   margin: 10px;
+  margin-right: 5px;
   height: 40px;
   padding-left: 10px;
   box-shadow: 1px 1px 1px #245f68;
@@ -52,11 +49,52 @@
   width: 80px;
   height: 40px;
   color: #245f68;
+  font-size: 18px;
 }
-ul {
-  margin: 0 auto;
-  display: table;
-  list-style: none;
-  align-items: center;
-  width: 90%;
+#add-new-task:hover {
+  background-color: #245f68;
+  color: white;
+}
+table {
+  width: 85%;
+  background-color: white;
+  margin: auto;
+  padding: 13px;
+}
+th {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 21px;
+  background-color: #245f68;
+  border: 1px solid #245f68;
+  color: white;
+  padding: 10px;
+}
+th:first-child {
+  width: 80%;
+}
+td {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 18px;
+  border: 1px solid #9cadce;
+  padding: 5px;
+}
+td:last-child {
+  color: #c71717;
+}
+.rating h3 {
+  margin-top: 40px;
+  font-size: 25px;
+  color: white;
+  background: none;
+}
+#save {
+  width: 100px;
+  margin-top: 50px;
+  color: #245f68;
+}
+#save:hover {
+  background-color: #245f68;
+  color: white;
 }
