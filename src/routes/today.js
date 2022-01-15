@@ -17,7 +17,10 @@ class Today extends React.Component {
                 {'task': 'Apply to internship', 'completed': true, 'id': 3},
                 {'task': 'Send an email', 'completed': false, 'id': 4}
             ],
-            todayRating: [false, false, false]
+            todayRating: 
+            [{'clicked': false, 'color': 'white'},
+            {'clicked': false, 'color': 'white'},
+            {'clicked': false, 'color': 'white'}]
         }
 
         this.addNewTask = this.addNewTask.bind(this);
@@ -53,16 +56,13 @@ class Today extends React.Component {
 
     changeColor(e) {
         var index = e.target.id;
-        console.log(index);
         var ratings = this.state.todayRating;
-        if (ratings[index] === false) {
-            console.log(e.target.children);
+        ratings[index].clicked = !ratings[index].clicked;
+        if (ratings[index].clicked === false) {
+            ratings[index].color = 'white';
         } else {
-            console.log(e.target.children);
+            ratings[index].color = 'yellow';
         }
-
-        ratings[index] = !ratings[index];
-        console.log(ratings);
         this.setState({todayRating: ratings});
     }
 
@@ -122,12 +122,21 @@ class Today extends React.Component {
                     </div>
                     <div className="rating">
                         <h3>
-                            How was your day?
+                            Did you make a productive day?
                         </h3>
+                        <div className="stars">
+                            {}
+                        </div>
                         {/* Need to make the icon clickable */}
-                        <a id='0' onClick={this.changeColor}><FontAwesomeIcon icon={faSmile} size='4x' color='white'></FontAwesomeIcon></a>
-                        <a id='1' onClick={this.changeColor}><FontAwesomeIcon icon={faSadCry} size='4x' color='white'></FontAwesomeIcon></a>
-                        <a id='2' onClick={this.changeColor}><FontAwesomeIcon icon={faMeh} size='4x' color='white'></FontAwesomeIcon></a>
+                        <span className='icon' id='0' onClick={this.changeColor}>
+                            <FontAwesomeIcon icon={faSmile} size='4x' color={this.state.todayRating[0].color} ></FontAwesomeIcon>
+                        </span>
+                        <span className='icon' id='1' onClick={this.changeColor}>
+                            <FontAwesomeIcon icon={faSadCry} size='4x' color={this.state.todayRating[1].color}></FontAwesomeIcon>
+                        </span>
+                        <span className='icon' id='2' onClick={this.changeColor}>
+                            <FontAwesomeIcon icon={faMeh} size='4x' color='white' color={this.state.todayRating[2].color}></FontAwesomeIcon>
+                        </span>
                     </div>
 
                     <button id='save'>Save</button>

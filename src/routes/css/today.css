@@ -99,8 +99,19 @@ td:last-child {
   width: 100px;
   margin-top: 50px;
   color: #245f68;
+  height: 30px;
+  font-size: 18px;
 }
 #save:hover {
   background-color: #245f68;
   color: white;
+}
+.rating .icon {
+  cursor: pointer;
+  margin: 10px;
+  padding: 20px;
+}
+
+.rating .icon > svg {
+  pointer-events: none;
 }

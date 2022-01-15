@@ -6,7 +6,7 @@
   left: 0;
   z-index: 1;
   overflow-x: hidden;
-  padding-top: 20%;
+  padding-top: 200px;
   background-color: #245f68;
 }
 .sidebar a {
@@ -20,7 +20,67 @@
 }
 .tomorrow-planner {
   margin-left: 290px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .tomorrow-planner h1 {
   font-size: 40px;
+}
+.tomorrow-planner h3 {
+  margin-top: 40px;
+  font-size: 25px;
+  color: white;
+}
+.add {
+  margin-top: 40px;
+}
+#new-task {
+  font-size: 18px;
+  width: 70%;
+  margin: 10px;
+  margin-right: 5px;
+  height: 40px;
+  padding-left: 10px;
+  box-shadow: 1px 1px 1px #245f68;
+}
+#add-new-task {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  color: #245f68;
+  font-size: 18px;
+}
+#add-new-task:hover {
+  background-color: #245f68;
+  color: white;
+}
+table {
+  width: 85%;
+  background-color: white;
+  margin: auto;
+  padding: 13px;
+}
+th {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 21px;
+  background-color: #245f68;
+  border: 1px solid #245f68;
+  color: white;
+  padding: 10px;
+}
+th:first-child {
+  width: 80%;
+}
+td {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 18px;
+  border: 1px solid #9cadce;
+  padding: 5px;
+}
+td:last-child {
+  color: #c71717;
+  cursor: pointer;
 }
