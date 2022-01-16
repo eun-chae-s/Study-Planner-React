@@ -63,15 +63,15 @@ class Tomorrow extends React.Component {
                         </h3>
                     </div>
                     
-                    <div className="add">
-                        <input id="new-task" placeholder='Type new task' value={this.state.newTask} onChange={this.handleChangeNewTask}></input>
-                        <button id="add-new-task" onClick={this.addNewTask}>
+                    <div className="tmr-add">
+                        <input id="tmr-new-task" placeholder='Type new task' value={this.state.newTask} onChange={this.handleChangeNewTask}></input>
+                        <button id="tmr-add-new-task" onClick={this.addNewTask}>
                             Add
                         </button>
                     </div>
                     <div className="todo-list">
                         <table>
-                            <thead>
+                            <thead className='tmr'>
                                 <th>Task</th>
                                 <th>&#10003;</th>
                             </thead>
@@ -85,6 +85,7 @@ class Tomorrow extends React.Component {
                             </tbody>
                         </table>
                     </div>
+                    <button id='tmr-save'>Save</button>
                 </div>
             </div>
         )

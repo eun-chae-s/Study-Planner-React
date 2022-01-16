@@ -1,0 +1,56 @@
+.setting {
+  margin-left: 290px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.change {
+  margin-top: 90px;
+}
+
+#change-username,
+#change-password,
+#delete-account {
+  width: 200px;
+  color: #245f68;
+  background-color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#delete-account {
+  color: rgb(146, 21, 21);
+}
+
+.change-name input {
+  width: 300px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.change-pw input {
+  width: 300px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#change-n,
+#change-p {
+  width: 100px;
+  color: #245f68;
+  background-color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}

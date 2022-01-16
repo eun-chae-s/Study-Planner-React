@@ -5,8 +5,11 @@ import './index.css';
 import LogIn from './App';
 import Today from './routes/today';
 import Tomorrow from './routes/tomorrow';
+import Month from './routes/month';
+import Setting from './routes/setting';
 import CreateAccout from './routes/create';
 import reportWebVitals from './reportWebVitals';
+import firebase from './utils/firebase';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,6 +18,8 @@ ReactDOM.render(
       <Route path="today" element={<Today ></Today>}></Route>
       <Route path="create-new-account" element={<CreateAccout />}></Route>
       <Route path="tomorrow" element={<Tomorrow></Tomorrow>}></Route>
+      <Route path="month" element={<Month />}></Route>
+      <Route path="setting" element={<Setting />}></Route>
     </Routes>
     
   </BrowserRouter>,

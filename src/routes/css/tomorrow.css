@@ -32,27 +32,27 @@
   font-size: 25px;
   color: white;
 }
-.add {
+.tmr-add {
   margin-top: 40px;
 }
-#new-task {
+#tmr-new-task {
   font-size: 18px;
   width: 70%;
   margin: 10px;
   margin-right: 5px;
   height: 40px;
   padding-left: 10px;
-  box-shadow: 1px 1px 1px #245f68;
+  box-shadow: 1px 1px 1px #421b25;
 }
-#add-new-task {
+#tmr-add-new-task {
   display: inline-block;
   width: 80px;
   height: 40px;
-  color: #245f68;
+  color: #af8e97;
   font-size: 18px;
 }
-#add-new-task:hover {
-  background-color: #245f68;
+#tmr-add-new-task:hover {
+  background-color: #af8e97;
   color: white;
 }
 table {
@@ -61,26 +61,36 @@ table {
   margin: auto;
   padding: 13px;
 }
-th {
+.tmr th {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 21px;
-  background-color: #245f68;
-  border: 1px solid #245f68;
+  background-color: #d4afb9;
+  border: 1px solid #d4afb9;
   color: white;
   padding: 10px;
 }
-th:first-child {
+.tmr th:first-child {
   width: 80%;
 }
-td {
+.tmr td {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 18px;
-  border: 1px solid #9cadce;
+  border: 1px solid #d4afb9;
   padding: 5px;
 }
-td:last-child {
+.tmr td:last-child {
   color: #c71717;
-  cursor: pointer;
+}
+#tmr-save {
+  width: 100px;
+  margin-top: 50px;
+  color: #af8e97;
+  height: 30px;
+  font-size: 18px;
+}
+#tmr-save:hover {
+  background-color: #af8e97;
+  color: white;
 }
