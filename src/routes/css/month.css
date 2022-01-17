@@ -54,3 +54,14 @@
   margin-top: 10px;
   margin-bottom: 30px;
 }
+.this-month-planners h2 {
+  color: white;
+}
+.collection {
+  width: 80%;
+  height: 750px;
+  background-color: white;
+  margin: auto;
+  display: grid;
+  grid-gap: 20px 20px;
+}
