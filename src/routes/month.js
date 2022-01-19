@@ -6,10 +6,58 @@ import { Grid, Paper, Box } from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
-    padding: theme.spacing(1),
+    padding: theme.spacing(3.3),
+    margin: theme.spacing("auto"),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    color: '#245f68'
   }));
+
+class FormRow extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <Grid item xs={2.7}>
+                    <Item>
+                        {
+                            this.props.items[0] == '' 
+                            ? "Not done:)" 
+                            : this.props.items[0][0]
+                        }
+                    </Item>
+                </Grid>
+                <Grid item xs={2.7}>
+                    <Item>
+                        {
+                            this.props.items[1] == '' 
+                            ? "Not done:)" 
+                            : this.props.items[1][0]
+                        }
+                    </Item>
+                </Grid>
+                <Grid item xs={2.7}>
+                    <Item>
+                        {
+                            this.props.items[2] == '' 
+                            ? "Not done:)" 
+                            : this.props.items[2][0]
+                        }
+                    </Item>
+                </Grid>
+                <Grid item xs={2.7}>
+                    <Item>
+                        {
+                            (this.props.items[3] == '') ? "Not done:)" : this.props.items[3][0]
+                        }
+                    </Item>
+                </Grid>
+            </React.Fragment>
+        );
+    }
+}
 
 class Month extends React.Component {
     constructor(props) {
@@ -19,6 +67,29 @@ class Month extends React.Component {
             4: ['soso', 60], 8: ['sad', 40], 15:['happy', 80], 29:['soso', 70]
             }
         }
+
+        this.convertData = this.convertData.bind(this);
+    }
+
+    convertData(data) {
+        var arr = Array(32);
+        for (var i = 0; i < 32; i++) {
+            if (data[i + 1] == null) {
+                arr[i] = '';
+            } else {
+                arr[i] = data[i + 1];
+            }
+        }
+        var final = Array(8);
+        for (var i = 0; i < 8; i++) {
+            var a = Array(4);
+            a[0] = arr[4 * i];
+            a[1] = arr[4 * i + 1];
+            a[2] = arr[4 * i + 2];
+            a[3] = arr[4 * i + 3];
+            final[i] = a;
+        }
+        return final;
     }
 
     render() {
@@ -45,41 +116,43 @@ class Month extends React.Component {
                 <div className="this-month-planners">
                     <h1>Here's your progress!</h1>
                     <h2>{new Date().toISOString().slice(0, 7)}</h2>
-                    <Box sx={{ flexGrow: 1 }}>
-                        <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center">
-                            {Array.from({length:31},(v,k) => k+1).map((num) => {
-                                console.log(num);
-                                <Grid item xs={6} md={8}>
-                                    <Item>hello!</Item>
-                                </Grid>
-                                // if (this.state.data[num] != null) {
-                                //     <Grid item xs={6} md={8}>
-                                //         <Item>{this.state.data[num][0]}</Item>
-                                //     </Grid>
-                                // } else {
-                                    
-                                // }
-                                
-                            })}
+                    <Box 
+                        display="grid" 
+                        sx={{ flexGrow: 1}}
+                        width="100%"
+                    >
+                        <Grid 
+                            container spacing={2}
+                            alignItems="center"
+                            justify="center"
+                            marginLeft="15px"
+                        >
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[0]} />
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[1]} />
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[2]} />
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[3]} />
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[4]} />
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[5]} />
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[6]} />
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <FormRow items={this.convertData(this.state.data)[7]} />
+                            </Grid>
                         </Grid>
                     </Box>
-                    
-                    {/* <div className="collection">
-                        {Array.from({length:31},(v,k)=>k+1).map((num) => {
-                            console.log(num);
-                            if (this.state.data[num] != null) {
-                                <div className={"item"} id={"item" + num}>
-                                    <a>{this.state.data[num][0]}</a>
-                                    <a>{this.state.data[num][1]}</a>
-                                </div>
-                            } else {
-                                <div className={"item"} id={"item" + num}>
-                                    hello
-                                </div>
-                            }
-                            
-                        })}
-                    </div> */}
                 </div>
             </div>
         )
