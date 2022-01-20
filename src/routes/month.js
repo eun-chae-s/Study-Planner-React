@@ -3,13 +3,16 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { Grid, Paper, Box } from '@mui/material';
+import { faPen, faSmile } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
-    padding: theme.spacing(3.3),
+    padding: theme.spacing(2.5),
     margin: theme.spacing("auto"),
     textAlign: 'center',
-    color: '#245f68'
+    color: '#245f68',
+    cursor: 'pointer'
   }));
 
 class FormRow extends React.Component {
@@ -22,36 +25,56 @@ class FormRow extends React.Component {
             <React.Fragment>
                 <Grid item xs={2.7}>
                     <Item>
+                        <b style={{color: 'black'}}>-- {this.props.row * 4 + 1} --</b>
+                        <br></br>
                         {
                             this.props.items[0] == '' 
-                            ? "Not done:)" 
-                            : this.props.items[0][0]
+                            ? <FontAwesomeIcon icon={faPen} size='1x'></FontAwesomeIcon>
+                            : <a><i>{this.props.items[0][1] + "%"}</i></a>
                         }
                     </Item>
                 </Grid>
                 <Grid item xs={2.7}>
                     <Item>
+                        <b style={{color: 'black'}}>-- {this.props.row * 4 + 2} --</b>
+                        <br></br>
                         {
                             this.props.items[1] == '' 
-                            ? "Not done:)" 
-                            : this.props.items[1][0]
+                            ? <FontAwesomeIcon icon={faPen} size='1x'></FontAwesomeIcon>
+                            : <a><i>{this.props.items[1][1] + "%"}</i></a>
                         }
                     </Item>
                 </Grid>
                 <Grid item xs={2.7}>
                     <Item>
+                        <b style={{color: 'black'}}>-- {this.props.row * 4 + 3} --</b>
+                        <br></br>
                         {
                             this.props.items[2] == '' 
-                            ? "Not done:)" 
-                            : this.props.items[2][0]
+                            ? <FontAwesomeIcon icon={faPen} size='1x'></FontAwesomeIcon>
+                            : <a><i>{this.props.items[2][1] + "%"}</i></a>
                         }
                     </Item>
                 </Grid>
                 <Grid item xs={2.7}>
                     <Item>
                         {
-                            (this.props.items[3] == '') ? "Not done:)" : this.props.items[3][0]
+                            this.props.row * 4 + 4 == 32
+                            ? <div>
+                                <FontAwesomeIcon icon={faSmile} size='2x' color="black"></FontAwesomeIcon>
+                                
+                            </div>
+                            : <div>
+                                <b style={{color: 'black'}}>-- {this.props.row * 4 + 4} --</b>
+                                <br></br>
+                                {
+                                    this.props.items[3] == '' 
+                                    ? <FontAwesomeIcon icon={faPen} size='1x'></FontAwesomeIcon>
+                                    : <a><i>{this.props.items[3][1] + "%"}</i></a>
+                                }
+                            </div>
                         }
+                        
                     </Item>
                 </Grid>
             </React.Fragment>
@@ -128,28 +151,28 @@ class Month extends React.Component {
                             marginLeft="15px"
                         >
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[0]} />
+                                <FormRow row={0} items={this.convertData(this.state.data)[0]} />
                             </Grid>
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[1]} />
+                                <FormRow row={1} items={this.convertData(this.state.data)[1]} />
                             </Grid>
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[2]} />
+                                <FormRow row={2} items={this.convertData(this.state.data)[2]} />
                             </Grid>
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[3]} />
+                                <FormRow row={3} items={this.convertData(this.state.data)[3]} />
                             </Grid>
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[4]} />
+                                <FormRow row={4} items={this.convertData(this.state.data)[4]} />
                             </Grid>
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[5]} />
+                                <FormRow row={5} items={this.convertData(this.state.data)[5]} />
                             </Grid>
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[6]} />
+                                <FormRow row={6} items={this.convertData(this.state.data)[6]} />
                             </Grid>
                             <Grid container item spacing={3}>
-                                <FormRow items={this.convertData(this.state.data)[7]} />
+                                <FormRow row={7} items={this.convertData(this.state.data)[7]} />
                             </Grid>
                         </Grid>
                     </Box>
