@@ -3,6 +3,7 @@ import './css/today.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSmile, faSadCry, faMeh } from '@fortawesome/free-solid-svg-icons';
+import { database } from '../index';
 
 class Today extends React.Component {
     constructor(props) {
@@ -90,6 +91,7 @@ class Today extends React.Component {
                 <div className="today-planner">
                     <h1>
                         What's your plan for today?
+                        { console.log(database.collection("user"))}
                     </h1>
                     {/* new design for displaying date */}
                     <div className="today-date">
